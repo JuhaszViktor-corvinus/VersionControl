@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,21 @@ namespace UserMaintenance
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            SaveFileDialog mentes = new SaveFileDialog();
+            if (mentes.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(mentes.FileName);
+                for (int i = 0; i < listUsers.Items.Count; i++)
+                {
+                    writer.WriteLine((string)listUsers.Items[i]);
+                }
+                writer.Close();
+            }
+            mentes.Dispose();
         }
     }
 }
