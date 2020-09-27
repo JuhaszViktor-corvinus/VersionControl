@@ -62,5 +62,17 @@ namespace UserMaintenance
             }
             mentes.Dispose();
         }
+
+        private void Torles_Click(object sender, EventArgs e)
+        {
+            if (listUsers.SelectedIndex == -1)
+            {
+                MessageBox.Show("Válaszd ki a törölni kívánt elemet");
+            }
+            if (listUsers.SelectedIndex > -1)
+            {
+                listUsers.Items.RemoveAt(listUsers.SelectedIndex);
+            }
+        }
     }
 }
