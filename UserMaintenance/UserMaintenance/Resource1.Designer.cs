@@ -72,18 +72,9 @@ namespace UserMaintenance {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string FirstName {
+        internal static string FullName {
             get {
-                return ResourceManager.GetString("FirstName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to .
-        /// </summary>
-        internal static string LastName {
-            get {
-                return ResourceManager.GetString("LastName", resourceCulture);
+                return ResourceManager.GetString("FullName", resourceCulture);
             }
         }
     }
