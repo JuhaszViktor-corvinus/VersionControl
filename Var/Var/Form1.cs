@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -79,7 +80,14 @@ namespace Var
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            using (SaveFileDialog sfd = new SaveFileDialog())
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                    using (StreamWriter wr = new StreamWriter(sfd.FileName))
+                    {
+                        wr.WriteLine();
+                    }
+            }
         }
     }
 }
