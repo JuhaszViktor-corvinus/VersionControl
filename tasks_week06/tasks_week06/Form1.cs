@@ -21,8 +21,23 @@ namespace tasks_week06
         public Form1()
         {
             InitializeComponent();
-            
+            RefreshData();
+           
+        }
+        public class RateData
+        {
+            public DateTime Date { get; set; }
+            public string Currency { get; set; }
+            public decimal Value { get; set; }
+        }
 
+        private void chartRateData_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void RefreshData()
+        {
+            Rates.Clear();
             var mnbService = new MNBArfolyamServiceSoapClient();
             var request = new GetExchangeRatesRequestBody()
 
@@ -74,16 +89,20 @@ namespace tasks_week06
                 dataGridView1.DataSource = Rates;
             }
         }
-        public class RateData
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            public DateTime Date { get; set; }
-            public string Currency { get; set; }
-            public decimal Value { get; set; }
+            RefreshData();
         }
 
-        private void chartRateData_Click(object sender, EventArgs e)
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
         {
+            RefreshData();
+        }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }
