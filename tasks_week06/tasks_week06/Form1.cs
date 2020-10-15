@@ -11,12 +11,22 @@ using tasks_week06.MnbServiceReference;
 
 namespace tasks_week06
 {
+
     public partial class Form1 : Form
     {
-        var mnbService = new MNBArfolyamServiceSoapClient();
+        
         public Form1()
         {
             InitializeComponent();
+            var mnbService = new MNBArfolyamServiceSoapClient();
+            var request = new GetExchangeRatesRequestBody()
+            {
+                currencyNames = "EUR",
+                startDate = "2020-01-01",
+                endDate = "2020-06-30"
+            };
+            var response = mnbService.GetExchangeRates(request);
+            var result = response.GetExchangeRatesResult;
         }
     }
 }
