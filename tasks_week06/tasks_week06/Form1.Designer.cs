@@ -94,6 +94,7 @@
             this.chartRateData.Size = new System.Drawing.Size(425, 404);
             this.chartRateData.TabIndex = 1;
             this.chartRateData.Text = "chart1";
+            this.chartRateData.Click += new System.EventHandler(this.chartRateData_Click);
             // 
             // Form1
             // 

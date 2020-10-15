@@ -21,8 +21,7 @@ namespace tasks_week06
         public Form1()
         {
             InitializeComponent();
-            var xml = new XmlDocument();
-            xml.LoadXml(result);
+            
 
             var mnbService = new MNBArfolyamServiceSoapClient();
             var request = new GetExchangeRatesRequestBody()
@@ -34,6 +33,10 @@ namespace tasks_week06
             };
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
+
+            //xml
+            var xml = new XmlDocument();
+            xml.LoadXml(result);
 
             foreach (XmlElement element in xml.DocumentElement)
             {
@@ -68,7 +71,7 @@ namespace tasks_week06
                 chartArea.AxisX.MajorGrid.Enabled = false;
                 chartArea.AxisY.MajorGrid.Enabled = false;
                 chartArea.AxisY.IsStartedFromZero = false;
-
+                dataGridView1.DataSource = Rates;
             }
         }
         public class RateData
@@ -76,6 +79,11 @@ namespace tasks_week06
             public DateTime Date { get; set; }
             public string Currency { get; set; }
             public decimal Value { get; set; }
+        }
+
+        private void chartRateData_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
