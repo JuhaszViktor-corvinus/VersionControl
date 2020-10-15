@@ -49,7 +49,7 @@
             this.dataGridView1.DataSource = this.rateDataBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(34, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(610, 325);
+            this.dataGridView1.Size = new System.Drawing.Size(346, 404);
             this.dataGridView1.TabIndex = 0;
             // 
             // rateDataBindingSource
