@@ -17,7 +17,7 @@ namespace tasks_week06
     public partial class Form1 : Form
     {
         List<RateData> Rates = new List<RateData>();
-        
+        BindingList<Valuta> Currencies = new BindingList<Valuta>();
         public Form1()
         {
             InitializeComponent();
