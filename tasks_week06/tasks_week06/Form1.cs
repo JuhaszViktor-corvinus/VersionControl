@@ -14,7 +14,7 @@ namespace tasks_week06
 
     public partial class Form1 : Form
     {
-        
+        List<RateData> Rates = new List<RateData>();
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +27,12 @@ namespace tasks_week06
             };
             var response = mnbService.GetExchangeRates(request);
             var result = response.GetExchangeRatesResult;
+        }
+        public class RateData
+        {
+            public DateTime Date { get; set; }
+            public string Currency { get; set; }
+            public decimal Value { get; set; }
         }
     }
 }
