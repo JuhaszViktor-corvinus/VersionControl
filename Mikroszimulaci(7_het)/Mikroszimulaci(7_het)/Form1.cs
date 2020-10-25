@@ -21,31 +21,7 @@ namespace Mikroszimulaci_7_het_
 
         public Form1()
         {
-            InitializeComponent();
-            Population = GetPopulation(@"C:\Temp\nép.csv");
-            BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
-            DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
-            for (int year = 2005; year <= 2024; year++)
-            {
-                foreach (string persone in Person) ;
-                for (int i = 0; i < Population.Count; i++)
-                {
-                    if (year<year+1)
-                    {
-                        Console.WriteLine(Population.Count);
-                        SimStep(year, persone);
-                    }
-                }
-
-                int nbrOfMales = (from x in Population
-                                  where x.Gender == Gender.Male && x.IsAlive
-                                  select x).Count();
-                int nbrOfFemales = (from x in Population
-                                    where x.Gender == Gender.Female && x.IsAlive
-                                    select x).Count();
-                Console.WriteLine(
-                    string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
-            }
+            
         }
         public List<Person> GetPopulation(string csvpath)
         {
@@ -143,6 +119,46 @@ namespace Mikroszimulaci_7_het_
                     Population.Add(újszülött);
                 }
             }
+        }
+
+        private void Start_Click(object sender, EventArgs e)
+        {
+            InitializeComponent();
+            Population = GetPopulation(@"C:\Temp\nép.csv");
+            BirthProbabilities = GetBirthProbabilities(@"C:\Temp\születés.csv");
+            DeathProbabilities = GetDeathProbabilities(@"C:\Temp\halál.csv");
+            for (int year = 2005; year <= 2024; year++)
+            {
+                foreach (string persone in Person) ;
+                for (int i = 0; i < Population.Count; i++)
+                {
+                    if (year < year + 1)
+                    {
+                        Console.WriteLine(Population.Count);
+                        SimStep(year, persone);
+                    }
+                }
+
+                int nbrOfMales = (from x in Population
+                                  where x.Gender == Gender.Male && x.IsAlive
+                                  select x).Count();
+                int nbrOfFemales = (from x in Population
+                                    where x.Gender == Gender.Female && x.IsAlive
+                                    select x).Count();
+                Console.WriteLine(
+                    string.Format("Év:{0} Fiúk:{1} Lányok:{2}", year, nbrOfMales, nbrOfFemales));
+            }
+        }
+
+        private void Browse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog olvaso = new OpenFileDialog();
+            textBox1.Text = ("C:\Temp\nép.csv");
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
