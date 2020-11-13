@@ -8,8 +8,12 @@ using System.Windows.Forms;
 
 namespace tasks_week08
 {
-    public class Ball : Label
+    public class Ball : Toy
     {
+        protected override void DrawImage(Graphics g)
+        {
+            g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
+        }    
         public Ball()
         {
             AutoSize = false;
