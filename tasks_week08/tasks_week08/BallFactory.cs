@@ -9,12 +9,12 @@ namespace tasks_week08
 {
     class BallFactory
     {
-        public class BallFactor
-        {
+        
+        
             public Ball CreateNew()
             {
                 return new Ball();
             }
-        }
+        
     }
 }
