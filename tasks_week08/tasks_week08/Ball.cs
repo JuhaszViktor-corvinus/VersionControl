@@ -13,7 +13,7 @@ namespace tasks_week08
         protected override void DrawImage(Graphics g)
         {
             g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
-        }    
+        }
         public Ball()
         {
             AutoSize = false;
@@ -36,5 +36,30 @@ namespace tasks_week08
         {
             Left += 1;
         }
+        public SolidBrush BallColor { get; private set; }
+
+        public Ball(Color color)
+        {
+            BallColor = new SolidBrush(color);
+        }
+
+        protected override void DrawImage(Graphics g)
+        {
+            g.FillEllipse(BallColor, 0, 0, Width, Height);
+        }
+        public Color BallColor { get; set; }
+
+        public Toy CreateNew()
+        {
+            return new Ball(BallColor);
+        }
+        private void btnSelectBall_Click(object sender, EventArgs e)
+        {
+            Factory = new BallFactory
+            {
+                BallColor = btnBallColor.BackColor
+            };
+        }
     }
-}
+
+

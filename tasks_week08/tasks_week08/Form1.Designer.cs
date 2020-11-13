@@ -36,11 +36,17 @@
             this.PRESENT = new System.Windows.Forms.Button();
             this.CAR = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.Blue = new System.Windows.Forms.Button();
+            this.Red = new System.Windows.Forms.Button();
+            this.Yellow = new System.Windows.Forms.Button();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.Yellow);
+            this.mainPanel.Controls.Add(this.Red);
+            this.mainPanel.Controls.Add(this.Blue);
             this.mainPanel.Controls.Add(this.label1);
             this.mainPanel.Controls.Add(this.CAR);
             this.mainPanel.Controls.Add(this.PRESENT);
@@ -103,6 +109,33 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Coming Next:";
             // 
+            // Blue
+            // 
+            this.Blue.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.Blue.Location = new System.Drawing.Point(143, 135);
+            this.Blue.Name = "Blue";
+            this.Blue.Size = new System.Drawing.Size(90, 24);
+            this.Blue.TabIndex = 4;
+            this.Blue.UseVisualStyleBackColor = false;
+            // 
+            // Red
+            // 
+            this.Red.BackColor = System.Drawing.Color.Red;
+            this.Red.Location = new System.Drawing.Point(254, 135);
+            this.Red.Name = "Red";
+            this.Red.Size = new System.Drawing.Size(90, 24);
+            this.Red.TabIndex = 5;
+            this.Red.UseVisualStyleBackColor = false;
+            // 
+            // Yellow
+            // 
+            this.Yellow.BackColor = System.Drawing.Color.Yellow;
+            this.Yellow.Location = new System.Drawing.Point(254, 174);
+            this.Yellow.Name = "Yellow";
+            this.Yellow.Size = new System.Drawing.Size(90, 24);
+            this.Yellow.TabIndex = 6;
+            this.Yellow.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +159,9 @@
         private System.Windows.Forms.Button CAR;
         private System.Windows.Forms.Button PRESENT;
         private System.Windows.Forms.Button BALL;
+        private System.Windows.Forms.Button Yellow;
+        private System.Windows.Forms.Button Red;
+        private System.Windows.Forms.Button Blue;
     }
 }
 
