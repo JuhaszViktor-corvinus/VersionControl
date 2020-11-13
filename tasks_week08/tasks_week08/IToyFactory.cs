@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace tasks_week08
 {
-    public interface IToyFactory
+    public class BallFactory : IToyFactory
     {
-        Toy CreateNew();
+        public Toy CreateNew()
+        {
+            return new Ball();
+        }
     }
 }
