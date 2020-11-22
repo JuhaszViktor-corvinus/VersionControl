@@ -17,5 +17,9 @@ namespace UnitTestExamle.Test
 
         // Assert
         Assert.AreEqual(expectedResult, actualResult);
+internal object Register(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
