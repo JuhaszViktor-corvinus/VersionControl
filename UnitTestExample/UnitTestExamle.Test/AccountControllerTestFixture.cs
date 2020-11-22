@@ -14,6 +14,12 @@ namespace UnitTestExamle.Test
         {
             // ...
         }
-
+        [
+        Test,
+        TestCase("abcd1234", false),
+        TestCase("irf@uni-corvinus", false),
+        TestCase("irf.uni-corvinus.hu", false),
+        TestCase("irf@uni-corvinus.hu", true)
+        ]
     }
 }
