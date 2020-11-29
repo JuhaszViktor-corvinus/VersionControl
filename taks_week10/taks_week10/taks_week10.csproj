@@ -45,7 +45,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WorldsHardestGame">
-      <HintPath>..\..\WorldsHardestGame.dll</HintPath>
+      <HintPath>..\WorldsHardestGame.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
